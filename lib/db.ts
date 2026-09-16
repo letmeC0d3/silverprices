@@ -5,27 +5,47 @@ import { DailyRateRecord } from './types';
 
 let dbInstance: Database.Database | null = null;
 
+export function getResolvedDbPath(): string {
+  if (process.env.SQLITE_DB_PATH) {
+    return path.resolve(process.env.SQLITE_DB_PATH);
+  }
+  return path.join(process.cwd(), 'data', 'silver.db');
+}
+
 export function getDb(): Database.Database {
   if (dbInstance) {
     return dbInstance;
   }
 
-  const dbDir = path.join(process.cwd(), 'data');
+  const dbPath = getResolvedDbPath();
+  const dbDir = path.dirname(dbPath);
+
   if (!fs.existsSync(dbDir)) {
     fs.mkdirSync(dbDir, { recursive: true });
   }
 
-  const dbPath = path.join(dbDir, 'silver.db');
   dbInstance = new Database(dbPath);
-  
-  // Pragmas for ultra-low memory & fast reads
+
+  // Pragmas for resilience, ultra-low memory & concurrency
   dbInstance.pragma('journal_mode = WAL');
   dbInstance.pragma('synchronous = NORMAL');
-  dbInstance.pragma('cache_size = -2000'); // ~2MB cache size limit
+  dbInstance.pragma('busy_timeout = 5000'); // Wait up to 5s for locks to resolve
+  dbInstance.pragma('cache_size = -2000');   // ~2MB cache limit
 
   initSchema(dbInstance);
 
   return dbInstance;
+}
+
+export function closeDb(): void {
+  if (dbInstance) {
+    try {
+      dbInstance.close();
+    } catch {
+      // Ignore if already closed
+    }
+    dbInstance = null;
+  }
 }
 
 function initSchema(db: Database.Database): void {
@@ -74,7 +94,8 @@ export function insertDailyRate(rate: {
       price_per_kg_999 = excluded.price_per_kg_999,
       price_per_gram_925 = excluded.price_per_gram_925,
       change_24h = excluded.change_24h,
-      change_percent_24h = excluded.change_percent_24h
+      change_percent_24h = excluded.change_percent_24h,
+      created_at = datetime('now')
   `);
 
   stmt.run(

@@ -45,6 +45,7 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
     day: 'numeric',
     month: 'short',
     year: 'numeric',
+    timeZone: 'Asia/Kolkata',
   });
 
   const title = `Silver Rate in ${city.name} Today (${todayStr}): 1g, 10g, 1kg Silver Price`;
@@ -111,6 +112,7 @@ export default async function CityPage({ params }: CityPageProps) {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
+    timeZone: 'Asia/Kolkata',
   });
 
   // Nearby or other cities for internal links
@@ -133,31 +135,31 @@ export default async function CityPage({ params }: CityPageProps) {
     },
   ];
 
-  // Schema.org Product structured data for programmatic SEO
-  const productSchema = {
+  // Schema.org WebPage structured data for informational portal
+  const webPageSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: `999 Pure Silver 1kg Bar in ${city.name}`,
-    description: `Current retail market price for 1kg 999 fine silver bar in ${city.name}, ${city.state}.`,
-    offers: {
-      '@type': 'Offer',
-      price: ratesTable[4].pureWithGST,
-      priceCurrency: 'INR',
-      priceValidUntil: new Date(Date.now() + 86400000).toISOString().split('T')[0],
-      availability: 'https://schema.org/InStock',
-      seller: {
-        '@type': 'Organization',
-        name: `${city.name} Bullion Market Benchmark`,
-      },
+    '@type': 'WebPage',
+    name: `Silver Rate in ${city.name} Today - Daily Bullion & Jewelry Benchmark`,
+    description: `Daily retail silver rates for ${city.name}, ${city.state}. Includes 999 fine silver and 925 sterling silver prices with 3% GST.`,
+    url: `https://silverprices.in/silver-rate-in-${city.slug}`,
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'SilverPrices.in',
+      url: 'https://silverprices.in',
+    },
+    about: {
+      '@type': 'FinancialProduct',
+      name: `Silver Bullion Market Benchmark (${city.name})`,
+      description: `Indicative daily benchmark rates for physical silver in ${city.name} based on national spot rates plus regional logistics.`,
     },
   };
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 space-y-10">
-      {/* Product JSON-LD */}
+      {/* WebPage JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
 
       {/* Breadcrumb Navigation */}
@@ -179,9 +181,9 @@ export default async function CityPage({ params }: CityPageProps) {
           Silver Rate in {city.name} Today ({formattedDate})
         </h1>
         <p className="text-sm sm:text-base text-slate-600 mt-2 max-w-3xl leading-relaxed">
-          Daily retail silver rates for {city.name}. Updated with live MCX spot benchmarks, 
-          regional logistics premium ({city.premiumPerKg >= 0 ? `+₹${city.premiumPerKg}/kg` : `-₹${Math.abs(city.premiumPerKg)}/kg`}), 
-          and statutory 3% retail GST.
+          Indicative daily physical retail silver benchmark for {city.name}. Calculated from spot parity, 
+          composite landed import adjustments, regional logistics premium ({city.premiumPerKg >= 0 ? `+₹${city.premiumPerKg}/kg` : `-₹${Math.abs(city.premiumPerKg)}/kg`}), 
+          and applicable statutory 3% retail GST.
         </p>
       </div>
 

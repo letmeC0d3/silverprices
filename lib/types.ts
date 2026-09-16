@@ -8,10 +8,10 @@ export interface SilverRateBreakdown {
 }
 
 export interface LiveSilverPriceData {
-  timestamp: string;
+  timestamp: string;               // ISO string of rate creation/observation
   spotPriceINRPerTroyOunce: number;
   basePricePerGram999: number;      // Spot converted to grams
-  effectiveDutyPricePerGram999: number; // After ~15% import tariff
+  effectiveDutyPricePerGram999: number; // After tariff and dealer margins
   effectiveDutyPricePerKg999: number;
   effectiveDutyPricePerGram925: number;
   change24h: number;                // Change per kg in INR
@@ -24,12 +24,16 @@ export interface LiveSilverPriceData {
     '1kg': SilverRateBreakdown;
   };
   source: 'live' | 'cache' | 'fallback';
+  isFallback: boolean;
+  isStale: boolean;
   lastUpdatedFormatted: string;
+  snapshotDate: string;             // YYYY-MM-DD in Asia/Kolkata timezone
+  statusMessage?: string;
 }
 
 export interface DailyRateRecord {
   id: number;
-  date: string;                     // YYYY-MM-DD
+  date: string;                     // YYYY-MM-DD (Asia/Kolkata calendar day)
   price_per_gram_999: number;
   price_per_kg_999: number;
   price_per_gram_925: number;
@@ -58,6 +62,7 @@ export interface SilverETF {
   aumCrores: number;
   expenseRatio: number;
   trackingError: number;
+  asOfDate?: string;
   zerodhaUrl: string;
   angelOneUrl: string;
 }

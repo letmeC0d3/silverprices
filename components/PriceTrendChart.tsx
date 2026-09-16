@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { DailyRateRecord } from '../lib/types';
 import { TrendingUp, Calendar, ArrowUpRight, ArrowDownRight } from 'lucide-react';
+import { computeChartGeometry } from '../lib/chart-utils';
 
 interface PriceTrendChartProps {
   data: DailyRateRecord[];
@@ -19,18 +20,6 @@ export default function PriceTrendChart({ data }: PriceTrendChartProps) {
     );
   }
 
-  const prices = data.map((d) => d.price_per_kg_999);
-  const minPrice = Math.min(...prices);
-  const maxPrice = Math.max(...prices);
-  const priceRange = maxPrice - minPrice || 1;
-  const avgPrice = Math.round(prices.reduce((a, b) => a + b, 0) / prices.length);
-
-  const firstPrice = prices[0];
-  const lastPrice = prices[prices.length - 1];
-  const totalChange = lastPrice - firstPrice;
-  const totalChangePercent = (totalChange / firstPrice) * 100;
-  const isUp = totalChange >= 0;
-
   // SVG dimensions
   const width = 800;
   const height = 260;
@@ -38,20 +27,18 @@ export default function PriceTrendChart({ data }: PriceTrendChartProps) {
   const paddingTop = 25;
   const paddingBottom = 35;
   const chartWidth = width - paddingX * 2;
-  const chartHeight = height - paddingTop - paddingBottom;
 
-  const points = data.map((d, i) => {
-    const x = paddingX + (i / (data.length - 1)) * chartWidth;
-    const y = paddingTop + chartHeight - ((d.price_per_kg_999 - minPrice) / priceRange) * chartHeight;
-    return { x, y, record: d };
-  });
-
-  const pathD = points.reduce((acc, pt, i) => {
-    return i === 0 ? `M ${pt.x},${pt.y}` : `${acc} L ${pt.x},${pt.y}`;
-  }, '');
-
-  // Area under line
-  const areaD = `${pathD} L ${points[points.length - 1].x},${height - paddingBottom} L ${points[0].x},${height - paddingBottom} Z`;
+  const {
+    points,
+    pathD,
+    areaD,
+    minPrice,
+    maxPrice,
+    avgPrice,
+    totalChange,
+    totalChangePercent,
+    isUp,
+  } = computeChartGeometry(data, width, height, paddingX, paddingTop, paddingBottom);
 
   const activePoint = hoverIndex !== null && points[hoverIndex] ? points[hoverIndex] : points[points.length - 1];
 
@@ -64,17 +51,19 @@ export default function PriceTrendChart({ data }: PriceTrendChartProps) {
             <div className="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center">
               <TrendingUp className="w-4 h-4" />
             </div>
-            <h2 className="text-lg font-bold text-slate-900">30-Day Silver Price Trend</h2>
+            <h2 className="text-lg font-bold text-slate-900">
+              {data.length === 1 ? 'Current Silver Price' : `${data.length}-Day Silver Price Trend`}
+            </h2>
           </div>
           <p className="text-xs text-slate-500 mt-0.5">
-            MCX benchmark 999 fine silver rate per kilogram (INR)
+            Physical retail benchmark estimate for 999 fine silver per kilogram (INR)
           </p>
         </div>
 
-        {/* 30d Delta Pill */}
+        {/* Movement Pill */}
         <div className="flex items-center space-x-3 text-xs">
           <div className="flex items-center space-x-1.5 font-mono">
-            <span className="text-slate-500">30D Movement:</span>
+            <span className="text-slate-500">Period Movement:</span>
             <span
               className={`inline-flex items-center font-bold px-2 py-0.5 rounded-md ${
                 isUp ? 'bg-emerald-50 text-emerald-700' : 'bg-rose-50 text-rose-700'
@@ -91,15 +80,15 @@ export default function PriceTrendChart({ data }: PriceTrendChartProps) {
       {/* Stat Badges */}
       <div className="grid grid-cols-3 gap-2 mb-4 text-xs font-mono">
         <div className="bg-slate-50 p-2.5 rounded-lg border border-slate-100">
-          <div className="text-[10px] uppercase tracking-wider text-slate-400 font-sans font-semibold">30D High</div>
+          <div className="text-[10px] uppercase tracking-wider text-slate-400 font-sans font-semibold">High</div>
           <div className="text-sm font-bold text-slate-900 mt-0.5">₹{maxPrice.toLocaleString('en-IN')}</div>
         </div>
         <div className="bg-slate-50 p-2.5 rounded-lg border border-slate-100">
-          <div className="text-[10px] uppercase tracking-wider text-slate-400 font-sans font-semibold">30D Low</div>
+          <div className="text-[10px] uppercase tracking-wider text-slate-400 font-sans font-semibold">Low</div>
           <div className="text-sm font-bold text-slate-900 mt-0.5">₹{minPrice.toLocaleString('en-IN')}</div>
         </div>
         <div className="bg-slate-50 p-2.5 rounded-lg border border-slate-100">
-          <div className="text-[10px] uppercase tracking-wider text-slate-400 font-sans font-semibold">30D Average</div>
+          <div className="text-[10px] uppercase tracking-wider text-slate-400 font-sans font-semibold">Average</div>
           <div className="text-sm font-bold text-slate-900 mt-0.5">₹{avgPrice.toLocaleString('en-IN')}</div>
         </div>
       </div>
@@ -129,9 +118,9 @@ export default function PriceTrendChart({ data }: PriceTrendChartProps) {
           />
           <line
             x1={paddingX}
-            y1={paddingTop + chartHeight / 2}
+            y1={paddingTop + (height - paddingTop - paddingBottom) / 2}
             x2={width - paddingX}
-            y2={paddingTop + chartHeight / 2}
+            y2={paddingTop + (height - paddingTop - paddingBottom) / 2}
             stroke="#e2e8f0"
             strokeDasharray="4 4"
           />
@@ -173,28 +162,40 @@ export default function PriceTrendChart({ data }: PriceTrendChartProps) {
           )}
 
           {/* Touch / Click target transparent bars */}
-          {points.map((pt, i) => (
-            <rect
-              key={pt.record.date}
-              x={pt.x - chartWidth / (data.length * 2)}
-              y={0}
-              width={chartWidth / data.length}
-              height={height}
-              fill="transparent"
-              onMouseEnter={() => setHoverIndex(i)}
-            />
-          ))}
+          {points.map((pt, i) => {
+            const barWidth = data.length === 1 ? chartWidth : chartWidth / data.length;
+            const barX = data.length === 1 ? paddingX : pt.x - barWidth / 2;
+            return (
+              <rect
+                key={pt.record.date || i}
+                x={barX}
+                y={0}
+                width={barWidth}
+                height={height}
+                fill="transparent"
+                onMouseEnter={() => setHoverIndex(i)}
+              />
+            );
+          })}
 
           {/* Axis Labels */}
-          <text x={paddingX} y={height - 12} fontSize="11" fill="#64748b" fontFamily="monospace">
-            {data[0]?.date}
-          </text>
-          <text x={width / 2} y={height - 12} textAnchor="middle" fontSize="11" fill="#94a3b8" fontFamily="monospace">
-            30-Day Window
-          </text>
-          <text x={width - paddingX} y={height - 12} textAnchor="end" fontSize="11" fill="#64748b" fontFamily="monospace">
-            {data[data.length - 1]?.date}
-          </text>
+          {data.length === 1 ? (
+            <text x={width / 2} y={height - 12} textAnchor="middle" fontSize="11" fill="#64748b" fontFamily="monospace">
+              {data[0]?.date} (Single Record)
+            </text>
+          ) : (
+            <>
+              <text x={paddingX} y={height - 12} fontSize="11" fill="#64748b" fontFamily="monospace">
+                {data[0]?.date}
+              </text>
+              <text x={width / 2} y={height - 12} textAnchor="middle" fontSize="11" fill="#94a3b8" fontFamily="monospace">
+                {data.length}-Day Window
+              </text>
+              <text x={width - paddingX} y={height - 12} textAnchor="end" fontSize="11" fill="#64748b" fontFamily="monospace">
+                {data[data.length - 1]?.date}
+              </text>
+            </>
+          )}
         </svg>
 
         {/* Hover Floating Tooltip */}
@@ -207,7 +208,7 @@ export default function PriceTrendChart({ data }: PriceTrendChartProps) {
             <div>
               <span className="text-slate-400 mr-2">Rate:</span>
               <strong className="text-emerald-400 text-sm">₹{activePoint.record.price_per_kg_999.toLocaleString('en-IN')}/kg</strong>
-              {activePoint.record.change_percent_24h !== 0 && (
+              {typeof activePoint.record.change_percent_24h === 'number' && activePoint.record.change_percent_24h !== 0 && (
                 <span className={`ml-2 text-xs ${activePoint.record.change_percent_24h >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
                   ({activePoint.record.change_percent_24h >= 0 ? '+' : ''}{activePoint.record.change_percent_24h.toFixed(2)}%)
                 </span>

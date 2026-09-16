@@ -4,9 +4,10 @@ import { Coins, TrendingUp, Calculator } from 'lucide-react';
 interface NavbarProps {
   spotRatePerKg?: number;
   changePercent?: number;
+  isFallback?: boolean;
 }
 
-export default function Navbar({ spotRatePerKg, changePercent = 0 }: NavbarProps) {
+export default function Navbar({ spotRatePerKg, changePercent = 0, isFallback = false }: NavbarProps) {
   const isPositive = changePercent >= 0;
 
   return (
@@ -24,7 +25,7 @@ export default function Navbar({ spotRatePerKg, changePercent = 0 }: NavbarProps
                   SilverPrices<span className="text-emerald-600">.in</span>
                 </span>
                 <span className="block text-[10px] font-medium text-slate-500 uppercase tracking-wider -mt-1">
-                  India Live Bullion Portal
+                  India Bullion Portal
                 </span>
               </div>
             </Link>
@@ -34,10 +35,12 @@ export default function Navbar({ spotRatePerKg, changePercent = 0 }: NavbarProps
           {spotRatePerKg && (
             <div className="hidden md:flex items-center space-x-2 bg-slate-50 border border-slate-200/80 px-3 py-1.5 rounded-full text-xs font-mono">
               <span className="relative flex h-2 w-2">
-                <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${isPositive ? 'bg-emerald-400' : 'bg-rose-400'}`}></span>
-                <span className={`relative inline-flex rounded-full h-2 w-2 ${isPositive ? 'bg-emerald-500' : 'bg-rose-500'}`}></span>
+                {!isFallback && (
+                  <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${isPositive ? 'bg-emerald-400' : 'bg-rose-400'}`}></span>
+                )}
+                <span className={`relative inline-flex rounded-full h-2 w-2 ${isFallback ? 'bg-amber-500' : isPositive ? 'bg-emerald-500' : 'bg-rose-500'}`}></span>
               </span>
-              <span className="font-semibold text-slate-700">1kg 999:</span>
+              <span className="font-semibold text-slate-700">{isFallback ? 'Benchmark 1kg:' : '1kg 999:'}</span>
               <span className="font-bold text-slate-900 tabular-nums">
                 ₹{spotRatePerKg.toLocaleString('en-IN')}
               </span>

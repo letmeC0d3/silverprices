@@ -32,7 +32,7 @@ export default function HeroTicker({ priceData }: HeroTickerProps) {
     {
       weight: '1 Kilogram',
       code: '1kg' as const,
-      sublabel: 'Standard MCX bullion bar unit',
+      sublabel: 'Standard retail bullion bar unit',
       ratePure: includeGST ? priceData.rates['1kg'].pricePure999WithGST : priceData.rates['1kg'].pricePure999,
       rateJewelry: includeGST ? priceData.rates['1kg'].priceJewelry925WithGST : priceData.rates['1kg'].priceJewelry925,
       delta: priceData.change24h * (includeGST ? 1.03 : 1.0),
@@ -44,11 +44,28 @@ export default function HeroTicker({ priceData }: HeroTickerProps) {
     <div className="w-full">
       {/* Top Controls Bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5 pb-3 border-b border-slate-200">
-        <div className="flex items-center space-x-2 text-xs text-slate-500 font-mono">
-          <Clock className="w-3.5 h-3.5 text-slate-400" />
-          <span>Last Updated: <strong className="text-slate-800">{priceData.lastUpdatedFormatted}</strong></span>
+        <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500 font-mono">
+          <div className="flex items-center space-x-1.5">
+            <Clock className="w-3.5 h-3.5 text-slate-400" />
+            <span>As of: <strong className="text-slate-800">{priceData.lastUpdatedFormatted}</strong></span>
+          </div>
           <span className="text-slate-300">&bull;</span>
-          <span className="capitalize text-slate-600">Feed: {priceData.source}</span>
+          {priceData.isFallback ? (
+            <span className="inline-flex items-center space-x-1 bg-amber-50 text-amber-800 border border-amber-200 px-2 py-0.5 rounded text-[11px] font-sans font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+              <span>Offline Benchmark ({priceData.snapshotDate})</span>
+            </span>
+          ) : priceData.isStale ? (
+            <span className="inline-flex items-center space-x-1 bg-amber-50 text-amber-700 border border-amber-200 px-2 py-0.5 rounded text-[11px] font-sans font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+              <span>Delayed Feed</span>
+            </span>
+          ) : (
+            <span className="inline-flex items-center space-x-1 bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded text-[11px] font-sans font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span>Live Market Feed</span>
+            </span>
+          )}
         </div>
 
         {/* GST Switcher */}
@@ -147,6 +164,15 @@ export default function HeroTicker({ priceData }: HeroTickerProps) {
           </div>
         ))}
       </div>
+
+      {priceData.isFallback && (
+        <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-xl flex items-center justify-between text-xs text-amber-800">
+          <div className="flex items-center space-x-2">
+            <span className="font-bold">⚠️ Offline Reference Notice:</span>
+            <span>Live streaming commodity feeds are temporarily unreachable. Displayed figures reflect the confirmed market closing snapshot from {priceData.snapshotDate}.</span>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

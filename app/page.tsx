@@ -62,7 +62,7 @@ export default async function HomePage() {
             </p>
           </div>
           <span className="text-xs font-mono text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">
-            MCX Spot Linked
+            Retail Benchmark Estimate
           </span>
         </div>
 

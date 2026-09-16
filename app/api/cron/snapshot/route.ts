@@ -1,16 +1,22 @@
 import { NextResponse } from 'next/server';
 import { fetchRawSilverRates } from '@/lib/price-service';
 import { revalidatePath } from 'next/cache';
+import { verifyCronSecret } from '@/lib/cron-utils';
 
 export const dynamic = 'force-dynamic';
 
-/**
- * Daily Snapshot & Revalidation Webhook
- * Can be called by a VPS crontab, GitHub Action, or uptime monitor:
- * Example crontab entry:
- * 0 9 * * * curl -s http://localhost:3000/api/cron/snapshot > /dev/null
- */
-export async function GET(request: Request) {
+async function handleSnapshot(request: Request) {
+  const auth = verifyCronSecret(request);
+  if (!auth.authorized) {
+    return NextResponse.json(
+      {
+        success: false,
+        error: auth.reason || 'Unauthorized',
+      },
+      { status: 401 }
+    );
+  }
+
   try {
     // 1. Fetch fresh rates directly and record snapshot into SQLite
     const data = await fetchRawSilverRates();
@@ -24,7 +30,10 @@ export async function GET(request: Request) {
       success: true,
       message: 'Silver rates updated and page caches revalidated successfully',
       date: data.timestamp,
+      snapshotDate: data.snapshotDate,
       source: data.source,
+      isFallback: data.isFallback,
+      isStale: data.isStale,
       rate1kgWithGST: data.rates['1kg'].pricePure999WithGST,
     });
   } catch (error: any) {
@@ -36,4 +45,12 @@ export async function GET(request: Request) {
       { status: 500 }
     );
   }
+}
+
+export async function POST(request: Request) {
+  return handleSnapshot(request);
+}
+
+export async function GET(request: Request) {
+  return handleSnapshot(request);
 }

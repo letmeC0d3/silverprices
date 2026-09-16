@@ -3,37 +3,40 @@
 import { useState } from 'react';
 import { Calculator, ArrowRight, RefreshCcw, ShieldAlert, Sparkles, CircleDollarSign } from 'lucide-react';
 
+import { calculateValuation, PurityGrade, WeightUnit } from '@/lib/calculator-utils';
+
 interface CalculatorFormProps {
   basePricePerGram999: number; // Spot + duty per gram
 }
 
 export default function CalculatorForm({ basePricePerGram999 }: CalculatorFormProps) {
   const [weight, setWeight] = useState<number>(50);
-  const [unit, setUnit] = useState<'grams' | 'kg'>('grams');
-  const [purity, setPurity] = useState<'999' | '925' | '800' | '9999'>('999');
+  const [unit, setUnit] = useState<WeightUnit>('grams');
+  const [purity, setPurity] = useState<PurityGrade>('999');
   const [makingChargesPercent, setMakingChargesPercent] = useState<number>(0);
   const [includeGST, setIncludeGST] = useState<boolean>(true);
   const [scrapDeductionPercent, setScrapDeductionPercent] = useState<number>(3); // 3% melting loss / refiner fee
 
-  const weightInGrams = unit === 'kg' ? (weight || 0) * 1000 : (weight || 0);
+  const valuation = calculateValuation({
+    weight,
+    unit,
+    purity,
+    makingChargesPercent,
+    includeGST,
+    scrapDeductionPercent,
+    basePricePerGram999,
+  });
 
-  // Purity coefficient
-  const purityMultiplier = {
-    '9999': 0.9999,
-    '999': 0.999,
-    '925': 0.925,
-    '800': 0.800,
-  }[purity];
-
-  // Calculations
-  const metalBaseValue = weightInGrams * basePricePerGram999 * (purityMultiplier / 0.999);
-  const makingChargesValue = metalBaseValue * ((makingChargesPercent || 0) / 100);
-  const metalGST = includeGST ? metalBaseValue * 0.03 : 0;
-  const makingGST = includeGST ? makingChargesValue * 0.05 : 0; // 5% GST on making charges in India
-  const totalPurchaseValue = metalBaseValue + makingChargesValue + metalGST + makingGST;
-
-  // Scrap / Resale Value (Jewellers do NOT pay back making charges or GST; they deduct melting/assaying ~2-4%)
-  const scrapMeltValue = metalBaseValue * (1 - (scrapDeductionPercent || 0) / 100);
+  const {
+    sanitizedWeightGrams,
+    pureSilverGrams,
+    metalBaseValue,
+    makingChargesValue,
+    metalGST,
+    makingGST,
+    totalPurchaseValue,
+    scrapMeltValue,
+  } = valuation;
 
   const resetForm = () => {
     setWeight(50);
@@ -286,7 +289,7 @@ export default function CalculatorForm({ basePricePerGram999 }: CalculatorFormPr
               <div className="flex justify-between">
                 <span>Net Pure Content:</span>
                 <span className="font-mono font-medium text-slate-900">
-                  {(weightInGrams * purityMultiplier).toFixed(2)} grams
+                  {pureSilverGrams.toFixed(2)} grams
                 </span>
               </div>
               <div className="flex justify-between">

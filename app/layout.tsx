@@ -74,19 +74,22 @@ export default async function RootLayout({
 }>) {
   let spotRatePerKg = 243500;
   let changePercent = 1.25;
+  let isFallback = false;
 
   try {
     const liveData = await getLiveSilverPrices();
     spotRatePerKg = liveData.effectiveDutyPricePerKg999;
     changePercent = liveData.changePercent24h;
+    isFallback = liveData.isFallback;
   } catch (err) {
     console.error('Error getting live prices for layout header:', err);
+    isFallback = true;
   }
 
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="font-sans antialiased text-slate-900 bg-slate-50 flex flex-col min-h-screen selection:bg-emerald-100 selection:text-emerald-900">
-        <Navbar spotRatePerKg={spotRatePerKg} changePercent={changePercent} />
+        <Navbar spotRatePerKg={spotRatePerKg} changePercent={changePercent} isFallback={isFallback} />
         <main className="flex-grow">{children}</main>
         <Footer />
       </body>
