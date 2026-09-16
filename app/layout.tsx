@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -92,6 +93,19 @@ export default async function RootLayout({
         <Navbar spotRatePerKg={spotRatePerKg} changePercent={changePercent} isFallback={isFallback} />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-F7MQL5TSB2"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-F7MQL5TSB2');
+          `}
+        </Script>
       </body>
     </html>
   );
