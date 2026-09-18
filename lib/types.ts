@@ -63,8 +63,8 @@ export interface SilverETF {
   expenseRatio: number;
   trackingError: number;
   asOfDate?: string;
-  zerodhaUrl: string;
-  angelOneUrl: string;
+  indmoneyUrl: string;
+  upstoxUrl: string;
 }
 
 export interface FAQItem {

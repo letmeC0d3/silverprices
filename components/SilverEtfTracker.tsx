@@ -11,8 +11,8 @@ const SILVER_ETFS: SilverETF[] = [
     aumCrores: 5840,
     expenseRatio: 0.48,
     trackingError: 0.12,
-    zerodhaUrl: 'https://kite.zerodha.com/',
-    angelOneUrl: 'https://www.angelone.in/',
+    indmoneyUrl: 'https://indmoney.onelink.me/RmHC/vrcwqqp7',
+    upstoxUrl: 'https://upstox.onelink.me/0H1s/33ARWE',
   },
   {
     name: 'ICICI Prudential Silver ETF',
@@ -23,8 +23,8 @@ const SILVER_ETFS: SilverETF[] = [
     aumCrores: 3920,
     expenseRatio: 0.44,
     trackingError: 0.14,
-    zerodhaUrl: 'https://kite.zerodha.com/',
-    angelOneUrl: 'https://www.angelone.in/',
+    indmoneyUrl: 'https://indmoney.onelink.me/RmHC/vrcwqqp7',
+    upstoxUrl: 'https://upstox.onelink.me/0H1s/33ARWE',
   },
   {
     name: 'HDFC Silver ETF',
@@ -35,8 +35,8 @@ const SILVER_ETFS: SilverETF[] = [
     aumCrores: 2750,
     expenseRatio: 0.40,
     trackingError: 0.11,
-    zerodhaUrl: 'https://kite.zerodha.com/',
-    angelOneUrl: 'https://www.angelone.in/',
+    indmoneyUrl: 'https://indmoney.onelink.me/RmHC/vrcwqqp7',
+    upstoxUrl: 'https://upstox.onelink.me/0H1s/33ARWE',
   },
   {
     name: 'Tata Silver ETF',
@@ -47,8 +47,8 @@ const SILVER_ETFS: SilverETF[] = [
     aumCrores: 1280,
     expenseRatio: 0.38,
     trackingError: 0.15,
-    zerodhaUrl: 'https://kite.zerodha.com/',
-    angelOneUrl: 'https://www.angelone.in/',
+    indmoneyUrl: 'https://indmoney.onelink.me/RmHC/vrcwqqp7',
+    upstoxUrl: 'https://upstox.onelink.me/0H1s/33ARWE',
   },
 ];
 
@@ -123,21 +123,23 @@ export default function SilverEtfTracker() {
                 <td className="py-3.5 px-3 text-right">
                   <div className="inline-flex items-center space-x-1.5">
                     <a
-                      href={etf.zerodhaUrl}
+                      href={etf.indmoneyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="inline-flex items-center space-x-1 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-2.5 py-1.5 rounded-lg transition-colors text-[11px] shadow-xs"
+                      title="Invest via INDmoney (Code: AKS52BDSIND)"
+                    >
+                      <span>INDmoney</span>
+                      <ExternalLink className="w-3 h-3 text-emerald-200" />
+                    </a>
+                    <a
+                      href={etf.upstoxUrl}
                       target="_blank"
                       rel="noopener noreferrer nofollow"
                       className="inline-flex items-center space-x-1 bg-slate-900 hover:bg-slate-800 text-white font-medium px-2.5 py-1.5 rounded-lg transition-colors text-[11px]"
+                      title="Trade via Upstox (Zero AMC & Brokerage)"
                     >
-                      <span>Zerodha</span>
-                      <ExternalLink className="w-3 h-3 text-slate-400" />
-                    </a>
-                    <a
-                      href={etf.angelOneUrl}
-                      target="_blank"
-                      rel="noopener noreferrer nofollow"
-                      className="inline-flex items-center space-x-1 bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium px-2.5 py-1.5 rounded-lg transition-colors text-[11px]"
-                    >
-                      <span>AngelOne</span>
+                      <span>Upstox</span>
                     </a>
                   </div>
                 </td>
@@ -148,7 +150,7 @@ export default function SilverEtfTracker() {
       </div>
 
       <div className="mt-3 text-[11px] text-slate-500 bg-slate-50 p-2.5 rounded-lg border border-slate-100 leading-relaxed">
-        <strong>*Disclaimer &amp; Data Currency:</strong> Net Asset Values (NAV), AUM, and expense ratios shown above are static reference benchmark values compiled from public AMC factsheets (As of Q1 2026). SilverPrices.in is an informational benchmark portal and does not stream real-time exchange order-book ticks for equities. For live execution prices, bid-ask spreads, and trading between 9:15 AM and 3:30 PM IST, please consult your SEBI-registered broker terminal directly.
+        <strong>*Disclaimer &amp; Data Currency:</strong> Net Asset Values (NAV), AUM, and expense ratios shown above are static reference benchmark values compiled from public AMC factsheets (As of Q1 2026). SilverPrices.in is an informational benchmark portal and does not stream real-time exchange order-book ticks for equities. For live execution prices, bid-ask spreads, and trading between 9:15 AM and 3:30 PM IST, please consult your SEBI-registered broker terminal directly (e.g. INDmoney or Upstox).
       </div>
     </div>
   );

@@ -46,22 +46,22 @@ export default function BrokerCTA({
         {/* Broker Partner Action Buttons */}
         <div className="flex flex-wrap gap-3 items-center">
           <a
-            href="https://zerodha.com/open-account"
+            href="https://indmoney.onelink.me/RmHC/vrcwqqp7"
             target="_blank"
             rel="noopener noreferrer nofollow"
             className="inline-flex items-center space-x-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-5 py-2.5 rounded-xl transition-all shadow-sm text-sm"
           >
-            <span>Open Zerodha Kite Account</span>
+            <span>Invest on INDmoney (Code: AKS52BDSIND)</span>
             <ArrowUpRight className="w-4 h-4" />
           </a>
 
           <a
-            href="https://www.angelone.in/open-demat-account"
+            href="https://upstox.onelink.me/0H1s/33ARWE"
             target="_blank"
             rel="noopener noreferrer nofollow"
             className="inline-flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 text-white font-semibold px-5 py-2.5 rounded-xl transition-all border border-slate-700 text-sm"
           >
-            <span>Trade on AngelOne</span>
+            <span>Open Upstox (Zero AMC)</span>
             <ArrowUpRight className="w-4 h-4 text-slate-400" />
           </a>
 

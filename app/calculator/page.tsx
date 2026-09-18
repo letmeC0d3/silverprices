@@ -107,7 +107,7 @@ export default async function CalculatorPage() {
       {/* Demat Broker Recommendation */}
       <BrokerCTA
         title="Avoid Making Charges Completely: Invest in Silver ETFs"
-        subtitle="When you buy Silver ETFs through Zerodha or AngelOne, you pay 0% making charges, zero GST on delivery, and pay only the exact market NAV."
+        subtitle="When you buy Silver ETFs through INDmoney or Upstox, you pay 0% making charges, zero GST on delivery, and pay only the exact market NAV."
       />
     </div>
   );
