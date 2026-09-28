@@ -6,8 +6,11 @@
     "region": "West",
     "isMetro": true,
     "premiumPerKg": 0,
-    "marketHubs": ["Zaveri Bazaar", "Kalbadevi", "Dadar Bullion Market"],
-    "localTradeInfo": "Mumbai is India's principal bullion trading hub. Daily retail prices in Zaveri Bazaar directly track port import costs and MCX benchmark rates with minimal regional markup."
+    "marketHubs": ["Zaveri Bazaar", "Kalbadevi", "Dadar Bullion Market", "Bandra Turner Road"],
+    "localTradeInfo": "Mumbai is India's premier bullion trading capital and primary port-of-entry for imported silver bars. Daily physical spot rates set in Zaveri Bazaar directly reflect COMEX parity, customs tariff notifications, and MCX near-month futures, acting as the national pricing benchmark.",
+    "tradeAssociation": "India Bullion and Jewellers Association (IBJA) & Bombay Bullion Association",
+    "hallmarkCenter": "Zaveri Bazaar BIS Hallmarking & Assaying Hub, Mumbai Central",
+    "localDemandProfile": "Heavy institutional bullion bar procurement, wholesale inter-state trade, industrial brazing alloys, and high-volume retail gifting coins."
   },
   {
     "slug": "delhi",
@@ -16,8 +19,11 @@
     "region": "North",
     "isMetro": true,
     "premiumPerKg": 100,
-    "marketHubs": ["Chandni Chowk", "Kucha Mahajani", "Karol Bagh", "Dariba Kalan"],
-    "localTradeInfo": "Kucha Mahajani in Chandni Chowk is North India's largest wholesale bullion exchange, accounting for heavy wholesale silver transactions and custom silverware craft."
+    "marketHubs": ["Kucha Mahajani (Chandni Chowk)", "Dariba Kalan", "Karol Bagh Bullion Row", "South Extension"],
+    "localTradeInfo": "Kucha Mahajani in Old Delhi is the undisputed nerve center for North India's wholesale bullion trade. Rates reflect wholesale consignment movements from ports with minimal interstate transit margins, serving manufacturing belts in Haryana, Punjab, and Uttar Pradesh.",
+    "tradeAssociation": "Delhi Bullion & Jewellers Association (DBJA)",
+    "hallmarkCenter": "Dariba Kalan & Karol Bagh Assaying and Hallmarking Centers",
+    "localDemandProfile": "High-purity 999 investment bars (1kg/30kg), ceremonial silverware, Diwali gifting coins, and bridal bridal silverware."
   },
   {
     "slug": "chennai",
@@ -26,8 +32,11 @@
     "region": "South",
     "isMetro": true,
     "premiumPerKg": 500,
-    "marketHubs": ["Sowcarpet", "T. Nagar", "George Town"],
-    "localTradeInfo": "Sowcarpet acts as the primary trading node for silver anklets, kolusu, and temple utensils. South Indian markets typically trade at a slight logistics premium over Mumbai."
+    "marketHubs": ["Sowcarpet Bullion Bazaar", "T. Nagar (Panagal Park)", "George Town", "Mylapore"],
+    "localTradeInfo": "Sowcarpet serves as Southern India's dominant distribution pivot for silver anklets (kolusu), temple idols, and puja utensils. Chennai quotes trade at a transport and transit insurance premium over western port benchmarks, heavily influenced by wedding season demand cycles.",
+    "tradeAssociation": "The Madras Jewellers & Diamond Merchants Association (MJDMA)",
+    "hallmarkCenter": "George Town & Sowcarpet BIS Certified Assaying Centers",
+    "localDemandProfile": "Traditional heavy silver anklets (kolusu), temple devotional offerings (kavasam), baby silverware, and Dhanteras silver ingots."
   },
   {
     "slug": "bangalore",
@@ -36,8 +45,11 @@
     "region": "South",
     "isMetro": true,
     "premiumPerKg": 300,
-    "marketHubs": ["Raja Market", "Avenue Road", "Commercial Street", "Jayanagar 4th Block"],
-    "localTradeInfo": "Raja Market on Avenue Road is Bangalore's historic bullion corridor, catering to large tech retail buyers and traditional puja silverware artisans."
+    "marketHubs": ["Raja Market (Avenue Road)", "Commercial Street", "Jayanagar 4th Block", "Malleswaram 8th Cross"],
+    "localTradeInfo": "Raja Market on Avenue Road houses Bangalore's historic bullion trading houses, anchoring South Karnataka's precious metals trade. Local prices blend wholesale quotes from Mumbai refineries with regional tech-demographic consumer buying trends.",
+    "tradeAssociation": "The Jewellers Association Bengaluru (JAB)",
+    "hallmarkCenter": "Avenue Road & Chickpet Hallmarking Bureau",
+    "localDemandProfile": "Modern 925 sterling silver daily-wear jewelry, corporate bullion gifting coins, tech investor silver accumulation, and festive pooja thalis."
   },
   {
     "slug": "kolkata",
@@ -46,8 +58,11 @@
     "region": "East",
     "isMetro": true,
     "premiumPerKg": 150,
-    "marketHubs": ["Bowbazar", "Burrabazar", "Gariahat"],
-    "localTradeInfo": "Bowbazar and Burrabazar are legendary bullion quarters in Eastern India, known for intricate filigree silver craftsmanship and investment bars."
+    "marketHubs": ["Bowbazar Bullion Corridor", "Burrabazar", "Gariahat", "Baguiati"],
+    "localTradeInfo": "Bowbazar and Burrabazar are Eastern India's century-old bullion epicenters. Kolkata bullion rates dictate spot transactions across West Bengal, Bihar, and the North East, driven by legendary local filigree artisan workshops and festive Durga Puja silverware demand.",
+    "tradeAssociation": "Calcutta Gem & Jewellers Association (CGJA)",
+    "hallmarkCenter": "Bowbazar Central BIS Hallmarking Center",
+    "localDemandProfile": "Intricate handcrafted silver filigree art, ritualistic Durga Puja ornaments, 999 investment bars, and antique silverware."
   },
   {
     "slug": "hyderabad",
@@ -56,8 +71,11 @@
     "region": "South",
     "isMetro": true,
     "premiumPerKg": 400,
-    "marketHubs": ["Pot Market (Secunderabad)", "Gulzar Houz (Charminar)", "General Bazaar"],
-    "localTradeInfo": "Gulzar Houz near Charminar has traded pure silver ornaments and Bidri crafts for centuries, with daily bullion rates tightly linked to South Indian trade guilds."
+    "marketHubs": ["Gulzar Houz (Charminar)", "Pot Market (Secunderabad)", "General Bazaar", "Somajiguda"],
+    "localTradeInfo": "Gulzar Houz in Old Hyderabad has been a celebrated silver trading district since Nizam rule. Daily bullion rates follow South Indian spot guild bulletins, accounting for secure transit from western ports and high rural agrarian harvest allocations.",
+    "tradeAssociation": "Twin Cities Jewellers Association (TCJA)",
+    "hallmarkCenter": "Secunderabad Pot Market & Charminar BIS Hallmarking Hubs",
+    "localDemandProfile": "Bidri-inlaid silverware, wedding gift articles, Lakshmi-Ganesh minted silver medallions, and rural investment bars."
   },
   {
     "slug": "ahmedabad",
@@ -66,8 +84,11 @@
     "region": "West",
     "isMetro": true,
     "premiumPerKg": 50,
-    "marketHubs": ["Manek Chowk", "CG Road", "Ratanpole"],
-    "localTradeInfo": "Manek Chowk serves as Gujarat's premier bullion clearing ground. Gujarat is a leading consumer of industrial silver and silver casting units."
+    "marketHubs": ["Manek Chowk Bullion Market", "Ratanpole", "CG Road", "Satellite"],
+    "localTradeInfo": "Manek Chowk is one of India's most liquid bullion markets with minimal price spread against national spot benchmarks. Gujarat's heavy industrial demand for silver pastes in solar photovoltaic cells and chemical catalysts closely interacts with retail trading here.",
+    "tradeAssociation": "Ahmedabad Jewellers Association (AJA)",
+    "hallmarkCenter": "Manek Chowk & Ashram Road BIS Assaying Centers",
+    "localDemandProfile": "Solar cell industrial silver pastes, 30kg commercial bars, trading arbitrage, and Dhanteras silver utensils."
   },
   {
     "slug": "pune",
@@ -76,8 +97,11 @@
     "region": "West",
     "isMetro": true,
     "premiumPerKg": 100,
-    "marketHubs": ["Raviwar Peth", "Laxmi Road", "Camp"],
-    "localTradeInfo": "Raviwar Peth is the bustling nerve center for western Maharashtra bullion dealers, closely tracking Mumbai spot benchmarks."
+    "marketHubs": ["Raviwar Peth Bullion Galli", "Laxmi Road", "Camp MG Road", "Kothrud"],
+    "localTradeInfo": "Raviwar Peth is the bustling bullion command center for Western Maharashtra, supplying retail jewellers across Pune, Satara, and Kolhapur. Prices mirror Mumbai spot rates with a tight logistics differential.",
+    "tradeAssociation": "Pune Saraf Association",
+    "hallmarkCenter": "Raviwar Peth BIS Hallmarking and Purity Assaying Bureau",
+    "localDemandProfile": "Ganesh festival silver modak & murtis, bridal silverware, 100g/1kg investment bars, and precision engineering silver contacts."
   },
   {
     "slug": "jaipur",
@@ -86,8 +110,11 @@
     "region": "North",
     "isMetro": false,
     "premiumPerKg": 200,
-    "marketHubs": ["Johari Bazaar", "Tripolia Bazaar", "MI Road"],
-    "localTradeInfo": "Johari Bazaar is a globally celebrated center for 925 sterling silver gemstone jewelry, silverware, and traditional Rajasthani silver ornaments."
+    "marketHubs": ["Johari Bazaar", "Tripolia Bazaar", "MI Road", "Choura Rasta"],
+    "localTradeInfo": "Johari Bazaar is a world-renowned capital for 925 sterling silver jewelry manufacturing, colored gemstone mounting, and traditional Rajasthani tribal ornaments. Physical silver spot rates dictate daily raw silver consignment purchase prices across thousands of local artisan studios.",
+    "tradeAssociation": "Jaipur Jewellers Association (JJA)",
+    "hallmarkCenter": "Johari Bazaar BIS Assaying & Hallmarking Complex",
+    "localDemandProfile": "925 sterling gemstone-studded jewelry export, export casting grains, antique tribal anklets (kadas), and royal decorative artifacts."
   },
   {
     "slug": "surat",
@@ -96,8 +123,11 @@
     "region": "West",
     "isMetro": false,
     "premiumPerKg": 50,
-    "marketHubs": ["Chauta Bazar", "Ghopad Road", "Bhagal"],
-    "localTradeInfo": "Surat pairs diamond trading prowess with rapid retail silver jewelry fabrication and high-purity silver bar consumption."
+    "marketHubs": ["Chauta Bazar", "Bhagal Bullion Row", "Ghopad Road", "Varachha"],
+    "localTradeInfo": "Surat combines diamond cutting leadership with rapid modern silver jewelry fabrication. Bullion rates are nearly on par with Mumbai due to immediate rail and highway logistics corridors.",
+    "tradeAssociation": "Surat Bullion Association",
+    "hallmarkCenter": "Mahidharpura & Chauta Bazar Hallmarking Center",
+    "localDemandProfile": "Silver jewelry fabrication, diamond-set silver ornaments, diamond polishers' festive gifting coins, and institutional bars."
   },
   {
     "slug": "lucknow",
@@ -106,8 +136,11 @@
     "region": "North",
     "isMetro": false,
     "premiumPerKg": 150,
-    "marketHubs": ["Chowk", "Aminabad", "Hazratganj"],
-    "localTradeInfo": "Chowk is the epicenter for silver foil (vark) manufacturing and delicate silver filigree work cherished across Awadh."
+    "marketHubs": ["Chowk Saraf Bazaar", "Aminabad", "Hazratganj", "Alambagh"],
+    "localTradeInfo": "Chowk is the historic heart of Lucknow's bullion and metal craftsmanship. Lucknow is India's principal center for silver foil (chandi ka vark) beating and delicate Awadhi filigree silverware, setting bullion demand rhythms across Central UP.",
+    "tradeAssociation": "Lucknow Bullion & Jewellers Association",
+    "hallmarkCenter": "Chowk & Aminabad BIS Certified Hallmarking Hubs",
+    "localDemandProfile": "High-purity silver foil (vark) manufacturing, traditional Awadhi tea sets, puja thalis, and festive investment bars."
   },
   {
     "slug": "kanpur",
@@ -116,8 +149,11 @@
     "region": "North",
     "isMetro": false,
     "premiumPerKg": 120,
-    "marketHubs": ["Naya Ganj", "Birhana Road", "General Ganj"],
-    "localTradeInfo": "Naya Ganj and Birhana Road represent Central UP's primary bullion exchange, supplying silver bars to regional manufacturing clusters."
+    "marketHubs": ["Naya Ganj Bullion Market", "Birhana Road", "General Ganj", "Govind Nagar"],
+    "localTradeInfo": "Naya Ganj and Birhana Road represent Central Uttar Pradesh's highest-turnover wholesale bullion trading exchange. Industrialists, grain merchants, and retail jewellers from surrounding agricultural districts settle bulk physical silver contracts here.",
+    "tradeAssociation": "Kanpur Sarafa Association",
+    "hallmarkCenter": "Birhana Road BIS Hallmarking Center",
+    "localDemandProfile": "Wholesale physical bar distribution, commercial silver ingots, rural harvest wealth conversion, and wedding payal craft."
   },
   {
     "slug": "nagpur",
@@ -126,8 +162,11 @@
     "region": "Central",
     "isMetro": false,
     "premiumPerKg": 180,
-    "marketHubs": ["Itwari Sarafa", "Dharampeth", "Sitabuldi"],
-    "localTradeInfo": "Itwari Sarafa is Central India's key bullion distribution pivot, serving eastern Maharashtra, Madhya Pradesh, and Chhattisgarh."
+    "marketHubs": ["Itwari Sarafa Bazaar", "Dharampeth", "Sitabuldi", "Gandhibagh"],
+    "localTradeInfo": "Itwari Sarafa is Central India's primary bullion clearing hub, connecting eastern Maharashtra (Vidarbha) with trade lines extending into Madhya Pradesh and Chhattisgarh.",
+    "tradeAssociation": "Nagpur Sarafa Association",
+    "hallmarkCenter": "Itwari Bullion BIS Hallmarking Center",
+    "localDemandProfile": "Vidarbha rural crop-cycle silver bar investments, festive Laxmi Puja silver coins, and traditional temple utensils."
   },
   {
     "slug": "indore",
@@ -136,8 +175,11 @@
     "region": "Central",
     "isMetro": false,
     "premiumPerKg": 150,
-    "marketHubs": ["Sarafa Bazaar", "Bada Sarafa", "Chhota Sarafa"],
-    "localTradeInfo": "Indore's Sarafa Bazaar is legendary for trading bullion by day and transforming into a lively street food market by night."
+    "marketHubs": ["Sarafa Bazaar (Bada & Chhota Sarafa)", "Rajwada Bullion Market", "MG Road", "Vijay Nagar"],
+    "localTradeInfo": "Indore's Sarafa Bazaar is a historic bullion exchange by day and celebrated night street food market by dusk. Bullion dealers here establish daily benchmark rates for the Malwa region, trading standard fine silver bars against Mumbai and Delhi transfers.",
+    "tradeAssociation": "Indore Chandi Sona Vyapari Association",
+    "hallmarkCenter": "Sarafa Bazaar BIS Hallmarking & Laser Assaying Station",
+    "localDemandProfile": "Malwa soybean harvest-driven physical bullion buying, wedding silverware, festive Diwali silver bars, and religious artifacts."
   },
   {
     "slug": "coimbatore",
@@ -146,8 +188,11 @@
     "region": "South",
     "isMetro": false,
     "premiumPerKg": 550,
-    "marketHubs": ["Big Bazaar Street", "Raja Street", "Cross Cut Road"],
-    "localTradeInfo": "Known as the Manchester of South India, Coimbatore has an expansive network of silver casting foundries and wedding silverware merchants."
+    "marketHubs": ["Big Bazaar Street", "Raja Street", "Cross Cut Road (Gandhipuram)", "RS Puram"],
+    "localTradeInfo": "Coimbatore is a prominent manufacturing nexus for silver casting foundries and wedding silverware. Bullion rates reflect transportation from southern ports and inter-district wholesale distribution across the Kongu Nadu industrial belt.",
+    "tradeAssociation": "Coimbatore Jewellers Association (CJA)",
+    "hallmarkCenter": "Big Bazaar Street BIS Certified Assaying Center",
+    "localDemandProfile": "Industrial casting granules, traditional Kongu bridal silver vessels, temple bell alloys, and corporate employee gifting tokens."
   },
   {
     "slug": "kochi",
@@ -156,8 +201,11 @@
     "region": "South",
     "isMetro": false,
     "premiumPerKg": 600,
-    "marketHubs": ["Broadway", "Jew Town", "MG Road"],
-    "localTradeInfo": "Kerala markets emphasize hallmark certified 999 fine silver bars and traditional temple lamps (nilavilakku) cast in pure silver."
+    "marketHubs": ["Broadway Bullion Row", "Jew Town (Mattancherry)", "MG Road", "Edappally"],
+    "localTradeInfo": "Kochi's bullion rates represent Kerala's retail precious metal benchmark. Given Kerala's discerning quality demands, physical silver transactions in Broadway center heavily around 999 certified hallmark bullion bars and heirloom devotional lamps (nilavilakku).",
+    "tradeAssociation": "All Kerala Gold and Silver Merchants Association (AKGSMA)",
+    "hallmarkCenter": "Ernakulam Broadway BIS Hallmarking Bureau",
+    "localDemandProfile": "Cast 999 silver Nilavilakku (temple lamps), hallmark investment ingots, baptismal gifting items, and Onam commemorative coins."
   },
   {
     "slug": "patna",
@@ -166,8 +214,11 @@
     "region": "East",
     "isMetro": false,
     "premiumPerKg": 250,
-    "marketHubs": ["Bakarganj", "Hathwa Market", "Muradpur"],
-    "localTradeInfo": "Bakarganj is Bihar's largest organized bullion cluster, witnessing seasonal spikes in silver coins during Dhanteras and Chhath."
+    "marketHubs": ["Bakarganj Bullion Market", "Hathwa Market", "Muradpur", "Boring Road"],
+    "localTradeInfo": "Bakarganj is Bihar's premier wholesale bullion trading nerve center. Daily silver rates cater to extensive rural retail networks across north and south Bihar, with dramatic seasonal surges during Chhath Puja and Dhanteras.",
+    "tradeAssociation": "Bihar Rajya Swarnakar Sangh",
+    "hallmarkCenter": "Bakarganj BIS Hallmarking Center",
+    "localDemandProfile": "Chhath Arghya silver supa and kalash, rural agricultural surplus conversion into solid silver bars, and traditional bridal payal."
   },
   {
     "slug": "bhopal",
@@ -176,8 +227,11 @@
     "region": "Central",
     "isMetro": false,
     "premiumPerKg": 180,
-    "marketHubs": ["Sarafa Chowk", "New Market", "Marwari Road"],
-    "localTradeInfo": "Sarafa Chowk in Old Bhopal supplies traditional tribal silver adornments and standard investment bars across the Malwa plateau."
+    "marketHubs": ["Sarafa Chowk (Old City)", "New Market", "Marwari Road", "Bittan Market"],
+    "localTradeInfo": "Sarafa Chowk in Old Bhopal acts as the central bullion marketplace for the state capital and surrounding Vindhya region, trading pure silver investment bars alongside traditional tribal silverware.",
+    "tradeAssociation": "Bhopal Sarafa Association",
+    "hallmarkCenter": "Sarafa Chowk BIS Hallmarking Center",
+    "localDemandProfile": "Traditional Gond/Bhil tribal silver ornaments, investment mint coins, pooja articles, and festive wedding sets."
   },
   {
     "slug": "vadodara",
@@ -186,8 +240,11 @@
     "region": "West",
     "isMetro": false,
     "premiumPerKg": 80,
-    "marketHubs": ["Mandvi", "Raopura", "Alkapuri"],
-    "localTradeInfo": "Mandvi is the royal cultural city's historic silver bullion center, catering to institutional investors and temple trusts."
+    "marketHubs": ["Mandvi Bullion Row", "Raopura Saraf Bazaar", "Alkapuri", "Old Padra Road"],
+    "localTradeInfo": "Mandvi is the royal cultural city's historic silver bullion center. Rates align closely with Ahmedabad benchmarks, providing pure silver supply to both chemical/pharmaceutical manufacturing units and royal heritage silverware smiths.",
+    "tradeAssociation": "Vadodara Saraf Association",
+    "hallmarkCenter": "Mandvi & Raopura BIS Assaying Hubs",
+    "localDemandProfile": "Industrial chemical catalyst silver grids, royal silverware replicas, festive Navratri silver chaniya-choli accessories, and 1kg bars."
   },
   {
     "slug": "chandigarh",
@@ -196,8 +253,11 @@
     "region": "North",
     "isMetro": false,
     "premiumPerKg": 120,
-    "marketHubs": ["Sector 22-D", "Sector 17", "Sector 35"],
-    "localTradeInfo": "Sector 22-D houses the Tricity's foremost hallmarked silver showroom row, serving retail buyers from Punjab, Haryana, and Himachal."
+    "marketHubs": ["Sector 22-D Jewelers Row", "Sector 17 Commercial Center", "Sector 35-C", "Sector 8 Inner Market"],
+    "localTradeInfo": "Sector 22-D houses the Tricity's foremost hallmarked bullion showroom row, serving affluent retail consumers and NRI families across Punjab, Haryana, and Himachal Pradesh with certified silver coins and decorative items.",
+    "tradeAssociation": "Chandigarh Jewellers Association",
+    "hallmarkCenter": "Sector 22-D BIS Hallmarking & Laser Assaying Bureau",
+    "localDemandProfile": "High-finish 999 silver gifting bars, NRI wedding gift articles, Gurpurab commemorative medallions, and luxury interior silver accents."
   },
   {
     "slug": "visakhapatnam",
@@ -206,8 +266,11 @@
     "region": "South",
     "isMetro": false,
     "premiumPerKg": 450,
-    "marketHubs": ["Kurupam Market", "Daba Gardens", "Jagadamba Junction"],
-    "localTradeInfo": "Kurupam Market in the port city of Vizag is Coastal Andhra's major bullion trading zone, heavily favored for silver idols and giftware."
+    "marketHubs": ["Kurupam Market Bullion Galli", "Daba Gardens", "Jagadamba Junction", "Gajuwaka"],
+    "localTradeInfo": "Kurupam Market in Old Visakhapatnam is Coastal Andhra's anchor bullion exchange, handling retail and wholesale silver requirements for naval personnel, industrial professionals, and port merchant communities.",
+    "tradeAssociation": "Visakhapatnam Bullion & Jewellers Association",
+    "hallmarkCenter": "Kurupam Market BIS Certified Assaying Station",
+    "localDemandProfile": "Silver deities for housewarming ceremonies (gruhapravesam), silver baby anklets (pattilu), Dhanteras coins, and pure 1kg investment bars."
   },
   {
     "slug": "vijayawada",
@@ -216,8 +279,11 @@
     "region": "South",
     "isMetro": false,
     "premiumPerKg": 420,
-    "marketHubs": ["One Town Sarafa", "Besant Road", "Governorpet"],
-    "localTradeInfo": "One Town Sarafa is a high-volume commercial hub where agrarian surpluses are traditionally allocated into physical silver bars."
+    "marketHubs": ["One Town Sarafa Bullion Complex", "Besant Road", "Governorpet", "MG Road (Bandar Road)"],
+    "localTradeInfo": "One Town Sarafa in Vijayawada is an extremely high-volume bullion clearing hub in the Krishna-Godavari agrarian delta. Prosperous farmers and commercial traders historically deploy agricultural surpluses into physical silver bars here.",
+    "tradeAssociation": "The Bezwada Jewellers Association",
+    "hallmarkCenter": "One Town BIS Hallmarking Hub",
+    "localDemandProfile": "Agricultural wealth hedging via 1kg pure silver bars, wedding silver gift sets, temple thalis, and Sankranti festival coins."
   },
   {
     "slug": "madurai",
@@ -226,8 +292,11 @@
     "region": "South",
     "isMetro": false,
     "premiumPerKg": 520,
-    "marketHubs": ["South Avani Moola Street", "Vilakkuthoon", "West Tower Street"],
-    "localTradeInfo": "South Avani Moola Street near the Meenakshi Amman Temple hosts master craftsmen producing silver kavasam (sacred armor) and devotional ware."
+    "marketHubs": ["South Avani Moola Street", "Vilakkuthoon Saraf Galli", "West Tower Street", "East Gate"],
+    "localTradeInfo": "South Avani Moola Street surrounding the ancient Meenakshi Amman Temple hosts generational silversmiths specialized in handcrafted silver kavasam (deity armour), temple vahanas, and heavyweight South Indian devotional vessels.",
+    "tradeAssociation": "Madurai Jewellers and Bullion Merchants Association",
+    "hallmarkCenter": "South Avani Moola Street BIS Assaying Center",
+    "localDemandProfile": "Temple armor (kavasam) fabrication, devotional puja vessels, traditional bridal kolusu (anklets), and silver wedding gift items."
   },
   {
     "slug": "varanasi",
@@ -236,8 +305,11 @@
     "region": "North",
     "isMetro": false,
     "premiumPerKg": 200,
-    "marketHubs": ["Thatheri Bazaar", "Chowk", "Rathyatra"],
-    "localTradeInfo": "Thatheri Bazaar is the ancient guild lane of metal smiths, celebrated for silver puja thalis, incense burners, and intricate engraving."
+    "marketHubs": ["Thatheri Bazaar", "Chowk Sarafa", "Rathyatra", "Godowlia"],
+    "localTradeInfo": "Thatheri Bazaar is Varanasi's historic metal-craft guild lane, nationally renowned for producing silver Ganga aarti lamps, pure silver bilva leaves, and pilgrimage religious souvenirs for millions of annual spiritual visitors.",
+    "tradeAssociation": "Kashi Sarafa Association",
+    "hallmarkCenter": "Thatheri Bazaar & Chowk BIS Assaying Bureau",
+    "localDemandProfile": "Ganga Aarti devotional lamps, Shiva lingam silver covers, religious pilgrimage silver medallions, and traditional eastern UP silverware."
   },
   {
     "slug": "rajkot",
@@ -246,8 +318,11 @@
     "region": "West",
     "isMetro": false,
     "premiumPerKg": 40,
-    "marketHubs": ["Soni Bazaar", "Dharmendra Road", "Palace Road"],
-    "localTradeInfo": "Soni Bazaar in Rajkot is arguably India's biggest manufacturing capital for hollow silver jewelry, chains, and silver casting components."
+    "marketHubs": ["Soni Bazaar Bullion Street", "Dharmendra Road", "Palace Road", "Tagore Road"],
+    "localTradeInfo": "Soni Bazaar in Rajkot is arguably India's biggest national manufacturing capital for machine-made silver chains, casting components, and hollow payals, supplying wholesale stock across all Indian states with razor-thin production spreads.",
+    "tradeAssociation": "Rajkot Gold & Silver Merchants Association",
+    "hallmarkCenter": "Soni Bazaar Central Laser Hallmarking Facility",
+    "localDemandProfile": "Mass-scale silver chain manufacturing, casting alloy grains, wholesale payals for nationwide distribution, and 30kg commercial bars."
   },
   {
     "slug": "amritsar",
@@ -256,8 +331,11 @@
     "region": "North",
     "isMetro": false,
     "premiumPerKg": 140,
-    "marketHubs": ["Guru Bazaar", "Katras", "Lawrence Road"],
-    "localTradeInfo": "Guru Bazaar, situated right beside the Golden Temple, has catered to North Indian bullion merchants and wedding silverware shoppers for over 400 years."
+    "marketHubs": ["Guru Bazaar (Golden Temple Vicinity)", "Katras Bullion Market", "Lawrence Road", "Mall Road"],
+    "localTradeInfo": "Guru Bazaar, situated right beside the Golden Temple, has traded physical bullion for over four centuries. Rates govern wholesale transactions throughout Majha and provide certified silver for ceremonial Sikh kadas and marriage silverware.",
+    "tradeAssociation": "Amritsar Bullion Merchants Association",
+    "hallmarkCenter": "Guru Bazaar BIS Hallmarking & Quality Testing Center",
+    "localDemandProfile": "Handcrafted pure silver kadas, Gurpurab commemorative medallions, wedding silverware, and NRI retail investment coins."
   },
   {
     "slug": "agra",
@@ -266,8 +344,11 @@
     "region": "North",
     "isMetro": false,
     "premiumPerKg": 110,
-    "marketHubs": ["Chauhan Basti", "Kinari Bazaar", "Namak Ki Mandi"],
-    "localTradeInfo": "Namak Ki Mandi in Agra is renowned nationally for wholesale payal (anklet) and silver chain production supplied across northern and eastern states."
+    "marketHubs": ["Namak Ki Mandi Bullion Hub", "Kinari Bazaar", "Chauhan Basti", "Sanjay Place"],
+    "localTradeInfo": "Namak Ki Mandi in Agra is renowned across India as the foremost wholesale production hub for silver anklets (payals), chains, and bichhiyas. Hundreds of cottage workshops supply wholesale silver merchants from UP, Bihar, Rajasthan, and MP.",
+    "tradeAssociation": "Agra Sarafa Association",
+    "hallmarkCenter": "Namak Ki Mandi & Kinari Bazaar BIS Hallmarking Hub",
+    "localDemandProfile": "Wholesale payal (anklet) mass production, silver toe-rings (bichhiya), 1kg casting bars, and raw bullion refining."
   },
   {
     "slug": "nashik",
@@ -276,8 +357,11 @@
     "region": "West",
     "isMetro": false,
     "premiumPerKg": 120,
-    "marketHubs": ["Saraf Bazaar", "Main Road", "College Road"],
-    "localTradeInfo": "Saraf Bazaar in Old Nashik serves as the primary pilgrimage bullion trading post along the Godavari, active in silver ritual items and bullions."
+    "marketHubs": ["Saraf Bazaar (Old Nashik)", "Main Road", "College Road", "Gangapur Road"],
+    "localTradeInfo": "Saraf Bazaar in Old Nashik along the Godavari river serves northern Maharashtra as a major pilgrimage bullion hub. Rates track Mumbai spot rates tightly, with strong seasonal spikes tied to Kumbh/Godavari yatras and grape vineyard harvest cycles.",
+    "tradeAssociation": "Nashik Saraf Association",
+    "hallmarkCenter": "Saraf Bazaar BIS Hallmarking Bureau",
+    "localDemandProfile": "Pilgrimage silver puja articles, harvest income bullion allocation, wedding silverware, and pure silver coins."
   },
   {
     "slug": "ludhiana",
@@ -286,8 +370,11 @@
     "region": "North",
     "isMetro": false,
     "premiumPerKg": 130,
-    "marketHubs": ["Sarafan Bazaar", "Ghumar Mandi", "Mall Road"],
-    "localTradeInfo": "Ludhiana's industrial entrepreneurs actively trade physical silver bullion and silver coins as a treasury hedge against currency fluctuation."
+    "marketHubs": ["Sarafan Bazaar (Old City)", "Ghumar Mandi", "Mall Road", "Model Town"],
+    "localTradeInfo": "Sarafan Bazaar caters to Punjab's wealthy industrial and manufacturing elite. Industrial entrepreneurs actively trade physical silver bullion bars and minted coins as a long-term treasury hedge against currency volatility.",
+    "tradeAssociation": "Ludhiana Jewellers Association",
+    "hallmarkCenter": "Sarafan Bazaar BIS Hallmarking Station",
+    "localDemandProfile": "Industrialist treasury hedging in 1kg/30kg bullion bars, luxury wedding silverware sets, corporate festive coins, and high-finish jewelry."
   },
   {
     "slug": "bhubaneswar",
@@ -296,7 +383,10 @@
     "region": "East",
     "isMetro": false,
     "premiumPerKg": 300,
-    "marketHubs": ["Bapuji Nagar", "Janpath", "Cuttack Tarakasi Belt"],
-    "localTradeInfo": "Connected with neighboring Cuttack's GI-tagged 'Chandi Tarakasi' (silver filigree), Bhubaneswar represents Odisha's premier retail silver marketplace."
+    "marketHubs": ["Bapuji Nagar Commercial Market", "Janpath Bullion Corridor", "Saheed Nagar", "Cuttack Tarakasi Belt"],
+    "localTradeInfo": "Bhubaneswar pairs capital retail demand with twin city Cuttack's GI-tagged 'Chandi Tarakasi' (intricate silver filigree). Daily bullion rates provide the foundation for raw silver supply to award-winning artisan guilds and grand Durga Puja silver tableaus (Chandi Medha).",
+    "tradeAssociation": "Bhubaneswar Jewellers Association",
+    "hallmarkCenter": "Bapuji Nagar & Janpath BIS Hallmarking Centers",
+    "localDemandProfile": "GI-tagged Cuttack Chandi Tarakasi (filigree), Durga Puja Chandi Medha tableau fabrication, Lord Jagannath ritual silverware, and wedding payals."
   }
 ]

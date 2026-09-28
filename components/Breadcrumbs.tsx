@@ -14,12 +14,20 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
   const schemaData = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: items.map((item, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: item.name,
-      item: item.url.startsWith('http') ? item.url : `https://silverprices.in${item.url}`,
-    })),
+    itemListElement: items.map((item, index) => {
+      // Ensure schema URLs are clean canonical paths without hash fragments
+      const cleanPath = item.url.split('#')[0] || '/';
+      const fullUrl = cleanPath.startsWith('http')
+        ? cleanPath
+        : `https://silverprices.in${cleanPath.startsWith('/') ? cleanPath : `/${cleanPath}`}`;
+
+      return {
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        item: fullUrl,
+      };
+    }),
   };
 
   return (

@@ -51,6 +51,9 @@ export interface CityData {
   premiumPerKg: number;              // Local freight/logistics adjustment in INR
   marketHubs: string[];
   localTradeInfo: string;
+  tradeAssociation?: string;
+  hallmarkCenter?: string;
+  localDemandProfile?: string;
 }
 
 export interface SilverETF {
